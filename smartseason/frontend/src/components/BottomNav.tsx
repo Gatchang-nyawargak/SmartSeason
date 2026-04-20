@@ -1,16 +1,26 @@
 import { Link, useLocation } from 'react-router-dom'
-
-const navItems = [
-  { to: '/admin', icon: 'dashboard', label: 'Dashboard' },
-  { to: '/fields', icon: 'potted_plant', label: 'Fields' },
-  { to: '#', icon: 'assignment', label: 'Tasks' },
-  { to: '#', icon: 'notifications', label: 'Alerts' },
-]
+import { useAuth } from '../context/AuthContext'
 
 export default function BottomNav() {
   const { pathname } = useLocation()
+  const { user } = useAuth()
+
+  const navItems = user?.role === 'admin'
+    ? [
+        { to: '/admin', icon: 'dashboard', label: 'Dashboard' },
+        { to: '/fields/new', icon: 'add_location', label: 'New Field' },
+        { to: '#', icon: 'cloud_done', label: 'Reports' },
+        { to: '#', icon: 'group', label: 'Team' },
+      ]
+    : [
+        { to: '/dashboard', icon: 'dashboard', label: 'Dashboard' },
+        { to: '#', icon: 'assignment', label: 'Tasks' },
+        { to: '#', icon: 'notifications', label: 'Alerts' },
+        { to: '#', icon: 'person', label: 'Profile' },
+      ]
+
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8faf6]/60 backdrop-blur-xl shadow-[0px_-12px_32px_rgba(25,28,26,0.06)] rounded-t-[24px]">
+    <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8faf6]/80 backdrop-blur-xl shadow-[0px_-12px_32px_rgba(25,28,26,0.06)] rounded-t-[24px]">
       {navItems.map(({ to, icon, label }) => {
         const active = pathname === to
         return (
