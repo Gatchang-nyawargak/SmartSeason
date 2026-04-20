@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #164212;
+  --color-primary-container: #2e5a27;
+  --color-primary-fixed: #bdf0ad;
+  --color-primary-fixed-dim: #a1d493;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed: #002201;
+  --color-on-primary-fixed-variant: #24501e;
+  --color-on-primary-container: #9ed090;
+  --color-inverse-primary: #a1d493;
+
+  --color-secondary: #5d604b;
+  --color-secondary-container: #e2e5ca;
+  --color-secondary-fixed: #e2e5ca;
+  --color-secondary-fixed-dim: #c6c9af;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #636651;
+  --color-on-secondary-fixed: #1a1d0d;
+  --color-on-secondary-fixed-variant: #454835;
+
+  --color-tertiary: #003c63;
+  --color-tertiary-container: #005488;
+  --color-tertiary-fixed: #cfe5ff;
+  --color-tertiary-fixed-dim: #99cbff;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #92c8ff;
+  --color-on-tertiary-fixed: #001d34;
+  --color-on-tertiary-fixed-variant: #004a78;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --color-background: #f8faf6;
+  --color-surface: #f8faf6;
+  --color-surface-bright: #f8faf6;
+  --color-surface-dim: #d8dbd7;
+  --color-surface-variant: #e1e3df;
+  --color-surface-tint: #3c6934;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f0;
+  --color-surface-container: #eceeea;
+  --color-surface-container-high: #e7e9e5;
+  --color-surface-container-highest: #e1e3df;
+  --color-on-surface: #191c1a;
+  --color-on-surface-variant: #42493e;
+  --color-on-background: #191c1a;
+  --color-inverse-surface: #2e312f;
+  --color-inverse-on-surface: #eff1ed;
+
+  --color-outline: #72796d;
+  --color-outline-variant: #c2c9bb;
+
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Public Sans", sans-serif;
+  --font-label: "Public Sans", sans-serif;
+
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+@layer base {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: #f8faf6;
+    color: #191c1a;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
